@@ -13,6 +13,8 @@ api = Api(blueprint,
           authorizations=authorizations
           )
 
+
+
 from app.main.controller.password_classification_controller import api as password_clf_ns
 
 api.add_namespace(password_clf_ns, path='/password')

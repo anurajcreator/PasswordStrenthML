@@ -1,4 +1,6 @@
 from os import cpu_count
+
+from flask.templating import render_template
 from app.main.util.apiresponse import apiResponse
 from flask import request
 import numpy as np
@@ -24,9 +26,8 @@ def load_saved_artifacts():
 
     return pred_dict, model
 
-def password_strength_predict(new_request):
+def password_strength_predict(data):
     try:
-        data = new_request.json
         
         password = data['password']
         
@@ -42,3 +43,4 @@ def password_strength_predict(new_request):
 
     except Exception as e:
         return apiResponse(False, 'Error occured', None, str(e)), 500
+

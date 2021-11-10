@@ -7,3 +7,4 @@ app.register_blueprint(blueprint)
 
 app.app_context().push()
 
+application = app
